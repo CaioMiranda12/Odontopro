@@ -4,9 +4,8 @@ import doctorHeroImg from '@/../public/doctor-hero.png'
 
 export function Hero() {
   return (
-    <section className="">
-
-      <div className="container mx-auto px-4 pt-20 flex items-center justify-center">
+    <section>
+      <div className="container mx-auto px-4 pt-20 pb-4 sm:pb-0 flex items-center justify-center">
         <article className="flex-[2] max-w-3xl space-y-8 flex flex-col">
           <h1 className="max-w-2xl text-4xl lg:text-6xl font-bold tracking-tight">
             Encontre os melhores profissionais em um único local!
@@ -16,7 +15,7 @@ export function Hero() {
             Nós somos uma plataforma para profissionais da saúde com foco em agilizar seu atendimento de forma simplificada e organizada.
           </p>
 
-          <Button className="bg-emerald-500 hover:bg-emerald-400 hover:font-semibold w-fit px-6">
+          <Button className="bg-emerald-500 hover:bg-emerald-400 hover:font-semibold w-fit px-6 cursor-pointer">
             Encontre uma clínica
           </Button>
         </article>
@@ -32,10 +31,7 @@ export function Hero() {
             priority
           />
         </div>
-
-
       </div>
-
     </section>
   )
 }

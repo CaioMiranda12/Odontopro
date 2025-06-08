@@ -45,7 +45,7 @@ export function Header() {
           Acessar clínica
         </Link>
       ) : (
-        <Button className="">
+        <Button className="cursor-pointer">
           <LogIn />
           Portal da clinica
         </Button>
