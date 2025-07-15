@@ -7,7 +7,6 @@ import {
   Sheet,
   SheetContent,
   SheetDescription,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
@@ -20,7 +19,6 @@ import logoImg from '../../../../../public/logo-odonto.png'
 import {
   Collapsible,
   CollapsibleContent,
-  CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 
 export function DashboardSidebar({ children }: { children: React.ReactNode }) {
