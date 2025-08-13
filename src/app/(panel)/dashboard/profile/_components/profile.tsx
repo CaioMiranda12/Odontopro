@@ -45,14 +45,20 @@ type UserWithSubscription = Prisma.UserGetPayload<{
 }>
 
 interface ProfileContentProps {
-  user: any;
+  user: UserWithSubscription;
 }
 
 export function ProfileContent({ user }: ProfileContentProps) {
-  const [selectedHours, setSelectedHours] = useState<string[]>([])
+  const [selectedHours, setSelectedHours] = useState<string[]>(user.times ?? [])
   const [dialogIsOpen, setDialogIsOpen] = useState(false)
 
-  const form = useProfileForm();
+  const form = useProfileForm({
+    name: user.name,
+    address: user.address,
+    phone: user.phone,
+    status: user.status,
+    timeZone: user.timeZone
+  });
 
   function generateTimeSlots() {
     const hours: string[] = []
@@ -110,7 +116,7 @@ export function ProfileContent({ user }: ProfileContentProps) {
               <div className="flex justify-center">
                 <div className="bg-gray-200 relative w-40 h-40 rounded-full overflow-hidden">
                   <Image
-                    src={imgTest}
+                    src={user.image ? user.image : imgTest}
                     alt="Foto da clinica"
                     fill
                     className="object-cover"
