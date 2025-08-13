@@ -35,13 +35,14 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
-import { Prisma } from "@/../generated/prisma"
+import { Prisma } from "@prisma/client"
 
-// type UserWithSubscription = Prisma.UserGetPayload<{
-//   include: {
-//     subscription: true;
-//   }
-// }>  
+
+type UserWithSubscription = Prisma.UserGetPayload<{
+  include: {
+    subscription: true;
+  }
+}>
 
 interface ProfileContentProps {
   user: any;
